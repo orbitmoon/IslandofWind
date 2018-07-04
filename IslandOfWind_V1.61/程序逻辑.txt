@@ -1,0 +1,24 @@
+本文档旨在从架构的角度介绍目前的程序帮助快速上手编程
+
+首先def __init__ 函数是继承自base的函数，可以简单的理解为预处理的设定，看到函数内部多是一些按键事件的注册等。
+注意到其中的taskMgr.add(self.update, 'updateWorld')一句。这是一个事件注册函数，事件是我们在运行panda3d程序是每帧都会运行的东西。
+
+接下来我们看看一些函数，类如def doExit(self)至def processInput(self, dt)这四个函数都是很明显的接受按键触发的函数处理事件，这是我们在__init__ 函数中就设置好调用的。
+
+后面一个需要注意的函数是def contact(self)，这个函数是根据接触检测来实现相应的功能，具体的接触物体类型我们马上会说到。
+
+def update(self, task)函数是bullet引擎模拟真实世界的函数，可以不用管，其具体的功能就是根据我们的帧率进行变化。
+
+def cleanup(self)是我们按R重置时的清空步骤，当你编写了你的功能模块的时候不要忘记在这里写上相应的内容。
+
+之后一系列的def initBoxes(self)函数都是设定不同类型的节点，具体到画面上就是一个个方块。
+
+def setup(self)函数是整合的初始化函数
+
+def updateCamera(self)是更新摄像机函数。
+
+
+
+
+
+在我们运行当前程序时，函数调用是run() -->__init__ -->update -->setup。而后在每帧调用update。根据update中注册的内容我们调用相应的processInput、contact和updateCamera.
