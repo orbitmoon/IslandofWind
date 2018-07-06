@@ -1,5 +1,5 @@
 # IslandofWind
-  The latest version is IslandofWind_publish, please download this file.
+  The latest version is IslandofWind_publish, please download this folder.
   
   This is a AVG game made by python2.7 and Panda3D game engine. because of some unknow reason, the game cannot be well packaged. So you should download and install Panda3D game engine SDK(Not Panda3D runtime) yourself before you want to run the game.(run game.py)
   
